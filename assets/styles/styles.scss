@@ -1,0 +1,124 @@
+@charset "utf-8";
+
+// Varriables
+$primary: #004fff;
+$dark: #242a39;
+$light: #707070;
+$lighter: #eef1f6;
+$white: #ffffff;
+
+// Custom styles
+body {
+  font-family: "Ubuntu", Helvetica, Arial, sans-serif;
+}
+
+.logo {
+  text-decoration: none;
+  font-size: 1.2em;
+  color: $primary;
+}
+
+.menu-item {
+  color: $light;
+  text-decoration: none;
+  border-bottom-color: transparent;
+  border-bottom-style: solid;
+  border-bottom-width: 4px;
+}
+
+a.navbar-item:focus,
+a.navbar-item:focus-within,
+a.navbar-item:hover,
+a.navbar-item.is-active,
+.navbar-link:focus,
+.navbar-link:focus-within,
+.navbar-link:hover,
+.navbar-link.is-active {
+  color: $dark;
+  background-color: $white;
+  font-weight: 500;
+}
+
+@media only screen and (min-width: 1024px) {
+  a.navbar-item.is-active::after,
+  .navbar-link.is-active::after {
+    content: "";
+    background-color: $primary;
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    top: 120%;
+    left: -50%;
+    transform: translate(50%);
+  }
+}
+
+.btn {
+  background-color: $primary;
+  padding: 12px 16px;
+  border-radius: 4px;
+  color: $white;
+}
+
+.upload-page {
+  background-color: $lighter;
+  height: 100vh;
+
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px);
+
+    .upload-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .upload-form {
+        .drop-zone {
+          width: 500px;
+          height: 250px;
+          border: 4px dashed $primary;
+          border-radius: 15px;
+
+          input {
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+          }
+
+          p {
+            top: 45%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            color: $primary;
+          }
+        }
+
+        button {
+          margin-top: 20px;
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+.code-container {
+  overflow-y: visible;
+
+  pre {
+    font-size: 0.8em;
+    height: calc(100vh - 278px);
+
+    code {
+      .name {
+        font-weight: 500;
+        text-transform: uppercase;
+        color: $primary;
+      }
+    }
+  }
+}
